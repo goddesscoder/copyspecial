@@ -7,7 +7,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 # give credits
-__author__ = "Bethsheba Zebata and a JT studyhall"
+__author__ = "Bethsheba Zebata and a JT, Gabby idea for join in main function"
 
 import re
 import os
@@ -83,12 +83,14 @@ def main(args):
     # Your code here: Invoke (call) your functions
     path_list = get_special_paths(ns.from_dir)
 
-    for path in path_list:
-        print(path)
+    # for path in path_list:
+    #     print(path)
     if ns.todir:
         copy_to(path_list, ns.todir)
-    if ns.tozip:
+    elif ns.tozip:
         zip_to(path_list, ns.tozip)
+    else:
+        print("\n".join(path_list))
 
 
 if __name__ == "__main__":
